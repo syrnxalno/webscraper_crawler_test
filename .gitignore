@@ -1,3 +1,4 @@
+# Ignore target folder (Maven compiled files)
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -7,11 +8,18 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+.mvn/
+
+# Eclipse project files
 .project
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
+.settings/
+
+# Ignore unnecessary files
+*.iml
+*.log
+.DS_Store
+Thumbs.db
