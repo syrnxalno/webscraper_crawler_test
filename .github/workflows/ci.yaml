@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up JDK 17
@@ -21,5 +21,12 @@ jobs:
           java-version: 17
           cache: maven
 
-      - name: Build and test with Maven
-        run: mvn -B verify
+      - name: Find and display pom.xml location
+        run: |
+          echo "Searching for pom.xml..."
+          find . -name "pom.xml"
+      
+      - name: Build all Maven projects
+        run: |
+          echo "Starting Maven build..."
+          find . -name "pom.xml" -execdir mvn -B verify \;
