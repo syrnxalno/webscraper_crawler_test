@@ -12,6 +12,7 @@ public class ScraperTest {
 
     @Test
     public void testScrapeProductsReturnsList() {
+        // todo : replace with replica
         String testUrl = "https://www.scrapingcourse.com/ecommerce/";
         List<Product> products = Scraper.scrapeProducts(testUrl);
 
@@ -19,6 +20,7 @@ public class ScraperTest {
         assertFalse(products.isEmpty(), "Product list should not be empty");
 
         for (Product p : products) {
+            // todo : possible stringent validations
             assertNotNull(p.getName(), "Product name should not be null");
             assertNotNull(p.getPrice(), "Product price should not be null");
             assertNotNull(p.getUrl(), "Product URL should not be null");
